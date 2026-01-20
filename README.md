@@ -14,11 +14,9 @@
 
 [![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
 
-## 👥 Usuarios del Sistema
-
 ---
 
-### **3 Tipos de Usuarios:**
+### **Tipos de Usuarios:**
 
 ## 📋 Tabla de Contenidos
 
