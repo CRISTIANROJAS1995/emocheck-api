@@ -1,452 +1,919 @@
-## ?? ?Qu¨¦ es EmoCheck?
+# ğŸ¯ EmoCheck API - Backend# ğŸ¯ EmoCheck API
 
-EmoCheck es una **plataforma web de evaluaci¨®n y monitoreo de salud mental y bienestar emocional en el trabajo**. Permite a las empresas cumplir con normativas de salud ocupacional (SVE Psicosocial) mientras cuidan la salud mental de sus trabajadores de forma continua, confidencial y basada en evidencia cient¨ªfica.
+
+
+> Plataforma web de evaluaciÃ³n y monitoreo de salud mental y bienestar emocional en entornos laborales.## ğŸ¯ Â¿QuÃ© es EmoCheck?
+
+
+
+[![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)EmoCheck es una **plataforma web de evaluaciÃ³n y monitoreo de salud mental y bienestar emocional en el trabajo**. Permite a las empresas cumplir con normativas de salud ocupacional (SVE Psicosocial) mientras cuidan la salud mental de sus trabajadores de forma continua, confidencial y basada en evidencia cientÃ­fica.
+
+[![SQL Server](https://img.shields.io/badge/SQL%20Server-2022-CC2927?logo=microsoft-sql-server)](https://www.microsoft.com/sql-server)
+
+[![Angular](https://img.shields.io/badge/Angular-21-DD0031?logo=angular)](https://angular.io/)---
+
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
+
+## ğŸ‘¥ Usuarios del Sistema
 
 ---
-
-## ?? Usuarios del Sistema
 
 ### **3 Tipos de Usuarios:**
 
+## ğŸ“‹ Tabla de Contenidos
+
 ### 1. **Trabajadores/Empleados**
-- Acceden para realizar autoevaluaciones
-- Ven sus propios resultados
-- Reciben recomendaciones personalizadas
-- Acceden a recursos de bienestar
 
-### 2. **L¨ªderes HSE / Psic¨®logos Ocupacionales**
-- Ven reportes agregados (no individuales, por confidencialidad)
-- Gestionan alertas cr¨ªticas
-- Dan seguimiento a casos de riesgo
-- Generan reportes por ¨¢rea/sede
+- [Â¿QuÃ© es EmoCheck?](#-quÃ©-es-emocheck)- Acceden para realizar autoevaluaciones
 
-### 3. **Administradores del Sistema**
+- [Usuarios del Sistema](#-usuarios-del-sistema)- Ven sus propios resultados
+
+- [MÃ³dulos de EvaluaciÃ³n](#-mÃ³dulos-de-evaluaciÃ³n)- Reciben recomendaciones personalizadas
+
+- [Flujo de Usuario](#-flujo-de-usuario)- Acceden a recursos de bienestar
+
+- [Panel de AdministraciÃ³n](#-panel-de-administraciÃ³n)
+
+- [Arquitectura TÃ©cnica](#-arquitectura-tÃ©cnica)### 2. **LÃ­deres HSE / PsicÃ³logos Ocupacionales**
+
+- [Base de Datos](#-base-de-datos)- Ven reportes agregados (no individuales, por confidencialidad)
+
+- [Seguridad y Cumplimiento](#-seguridad-y-cumplimiento)- Gestionan alertas crÃ­ticas
+
+- [Integraciones](#-integraciones)- Dan seguimiento a casos de riesgo
+
+- [Stack TecnolÃ³gico](#-stack-tecnolÃ³gico)- Generan reportes por Ã¡rea/sede
+
+- [InstalaciÃ³n](#-instalaciÃ³n)
+
+- [DocumentaciÃ³n](#-documentaciÃ³n)### 3. **Administradores del Sistema**
+
 - Configuran la plataforma
-- Gestionan usuarios y empresas
-- Acceden a todos los m¨®dulos
-- Configuran integraciones
 
----
+---- Gestionan usuarios y empresas
 
-## ?? M¨®dulos de Evaluaci¨®n
+- Acceden a todos los mÃ³dulos
 
-### **1. Salud Mental**
-Tamizaje de condiciones psicol¨®gicas comunes utilizando instrumentos cient¨ªficos validados:
+## ğŸ¯ Â¿QuÃ© es EmoCheck?- Configuran integraciones
 
-- **Ansiedad (GAD-7)**: Generalized Anxiety Disorder-7
-- **Depresi¨®n (PHQ-9)**: Patient Health Questionnaire-9
-- **Insomnio (ISI)**: Insomnia Severity Index
-- **Estr¨¦s Percibido**: Escala de percepci¨®n de estr¨¦s
 
-**Resultado**: Puntaje + semaforizaci¨®n (verde/amarillo/rojo) + recomendaciones personalizadas
 
-### **2. Fatiga Laboral**
-Evaluaci¨®n r¨¢pida de:
-- Nivel de energ¨ªa cognitiva
-- Agotamiento emocional
-- Capacidad de concentraci¨®n
+EmoCheck es una **plataforma web de evaluaciÃ³n y monitoreo de salud mental y bienestar emocional en el trabajo**. Permite a las empresas cumplir con normativas de salud ocupacional (SVE Psicosocial) mientras cuidan la salud mental de sus trabajadores de forma continua, confidencial y basada en evidencia cientÃ­fica.---
 
-**Objetivo**: Detectar burnout en etapas tempranas
 
-### **3. Clima Organizacional**
-Percepci¨®n del trabajador sobre:
-- Entorno laboral
-- Liderazgo
-- Prop¨®sito y motivaci¨®n
+
+### ğŸŒŸ CaracterÃ­sticas Principales## ğŸ“Š MÃ³dulos de EvaluaciÃ³n
+
+
+
+âœ… **Evaluaciones CientÃ­ficas**: Instrumentos validados (GAD-7, PHQ-9, ISI)  ### **1. Salud Mental**
+
+âœ… **SemaforizaciÃ³n AutomÃ¡tica**: Verde/Amarillo/Rojo  Tamizaje de condiciones psicolÃ³gicas comunes utilizando instrumentos cientÃ­ficos validados:
+
+âœ… **Alertas Inteligentes**: Notificaciones automÃ¡ticas para casos crÃ­ticos
+
+âœ… **Recomendaciones Personalizadas**: Recursos adaptados al resultado  - **Ansiedad (GAD-7)**: Generalized Anxiety Disorder-7
+
+âœ… **Dashboards Ejecutivos**: VisualizaciÃ³n de tendencias y comparativos  - **DepresiÃ³n (PHQ-9)**: Patient Health Questionnaire-9
+
+âœ… **Cumplimiento Legal**: Ley 1581/2012 y ResoluciÃ³n 2404/2019  - **Insomnio (ISI)**: Insomnia Severity Index
+
+âœ… **Confidencialidad Total**: Cifrado y anonimizaciÃ³n de datos sensibles  - **EstrÃ©s Percibido**: Escala de percepciÃ³n de estrÃ©s
+
+
+
+---**Resultado**: Puntaje + semaforizaciÃ³n (verde/amarillo/rojo) + recomendaciones personalizadas
+
+
+
+## ğŸ‘¥ Usuarios del Sistema### **2. Fatiga Laboral**
+
+EvaluaciÃ³n rÃ¡pida de:
+
+### 1. ğŸ‘” **Trabajadores/Empleados**- Nivel de energÃ­a cognitiva
+
+- Realizan autoevaluaciones- Agotamiento emocional
+
+- Ven sus resultados personales- Capacidad de concentraciÃ³n
+
+- Reciben recomendaciones
+
+- Acceden a recursos de bienestar**Objetivo**: Detectar burnout en etapas tempranas
+
+
+
+### 2. ğŸ‘¨â€âš•ï¸ **LÃ­deres HSE / PsicÃ³logos**### **3. Clima Organizacional**
+
+- Ven reportes agregados (no individuales)PercepciÃ³n del trabajador sobre:
+
+- Gestionan alertas crÃ­ticas- Entorno laboral
+
+- Dan seguimiento a casos- Liderazgo
+
+- Generan reportes por Ã¡rea/sede- PropÃ³sito y motivaciÃ³n
+
 - Relaciones interpersonales
 
-### **4. Riesgo Psicosocial**
-Basado en la **Bater¨ªa del Ministerio del Trabajo** (Colombia):
-- Factores intralaborales
-- Factores extralaborales
-- Estr¨¦s laboral
+### 3. ğŸ‘¨â€ğŸ’¼ **Administradores**
 
-**Cumplimiento legal**: Resoluci¨®n 2404 de 2019
+- Configuran la plataforma### **4. Riesgo Psicosocial**
+
+- Gestionan usuarios y empresasBasado en la **BaterÃ­a del Ministerio del Trabajo** (Colombia):
+
+- Acceden a todos los mÃ³dulos- Factores intralaborales
+
+- Configuran integraciones- Factores extralaborales
+
+- EstrÃ©s laboral
 
 ---
 
-## ?? Flujo de Usuario
+**Cumplimiento legal**: ResoluciÃ³n 2404 de 2019
 
-### **Paso 1: Bienvenida y Registro**
+## ğŸ“Š MÃ³dulos de EvaluaciÃ³n
+
+---
+
+### 1. ğŸ§  **Salud Mental**
+
+Tamizaje de condiciones psicolÃ³gicas comunes:## ğŸ”„ Flujo de Usuario
+
+- **Ansiedad (GAD-7)**: Generalized Anxiety Disorder-7
+
+- **DepresiÃ³n (PHQ-9)**: Patient Health Questionnaire-9### **Paso 1: Bienvenida y Registro**
+
+- **Insomnio (ISI)**: Insomnia Severity Index```
+
+- **EstrÃ©s Percibido**: Escala validada cientÃ­ficamenteUsuario ingresa â†’ Se registra â†’ Acepta Consentimiento Informado Digital
+
 ```
-Usuario ingresa ¡ú Se registra ¡ú Acepta Consentimiento Informado Digital
-```
-- El consentimiento explica: qu¨¦ se har¨¢ con sus datos, confidencialidad, prop¨®sito
+
+**Resultado**: Puntaje + semaforizaciÃ³n + recomendaciones- El consentimiento explica: quÃ© se harÃ¡ con sus datos, confidencialidad, propÃ³sito
+
 - Se guarda digitalmente con trazabilidad (fecha, hora, IP)
 
-### **Paso 2: Completar Perfil**
-```
-Datos del usuario:
-- Nombre completo
+### 2. âš¡ **Fatiga Laboral**
+
+EvaluaciÃ³n de:### **Paso 2: Completar Perfil**
+
+- Nivel de energÃ­a cognitiva```
+
+- Agotamiento emocionalDatos del usuario:
+
+- Capacidad de concentraciÃ³n- Nombre completo
+
 - Documento de identidad
-- ¨¢rea
+
+**Objetivo**: Detectar burnout temprano- Ãrea
+
 - Sede
-- Tipo de cargo
+
+### 3. ğŸ¢ **Clima Organizacional**- Tipo de cargo
+
+PercepciÃ³n sobre:- Correo corporativo
+
+- Entorno laboral```
+
+- Liderazgo
+
+- PropÃ³sito y motivaciÃ³n### **Paso 3: Realizar EvaluaciÃ³n**
+
+- Relaciones interpersonales```
+
+Selecciona mÃ³dulo â†’ Responde cuestionario â†’ Sistema calcula resultado automÃ¡ticamente
+
+### 4. âš ï¸ **Riesgo Psicosocial**```
+
+Basado en **BaterÃ­a Ministerio del Trabajo** (Colombia):- Las preguntas estÃ¡n estandarizadas (instrumentos validados cientÃ­ficamente)
+
+- Factores intralaborales- Sistema asigna puntuaciÃ³n automÃ¡tica segÃºn algoritmos establecidos
+
+- Factores extralaborales
+
+- EstrÃ©s laboral### **Paso 4: Ver Resultados**
+
+```
+
+**Cumplimiento**: ResoluciÃ³n 2404 de 2019Resultado semaforizado:
+
+ğŸŸ¢ Verde: Bienestar adecuado
+
+---ğŸŸ¡ Amarillo: AtenciÃ³n preventiva
+
+ğŸ”´ Rojo: Requiere intervenciÃ³n
+
+## ğŸ”„ Flujo de Usuario```
+
+
+
+### Paso 1ï¸âƒ£: Bienvenida y Registro### **Paso 5: Recomendaciones Personalizadas**
+
+```SegÃºn el resultado, el sistema entrega:
+
+Usuario ingresa â†’ Se registra â†’ Acepta Consentimiento Informado- Recursos de mindfulness
+
+```- Pausas activas
+
+- Consentimiento digital con trazabilidad completa- Ejercicios de respiraciÃ³n
+
+- Explica uso de datos y confidencialidad- RecomendaciÃ³n de consulta psicolÃ³gica (si aplica)
+
+
+
+### Paso 2ï¸âƒ£: Completar Perfil### **Paso 6: Centro de Recursos de Bienestar**
+
+```Acceso permanente a:
+
+Datos requeridos:- CalibraciÃ³n emocional
+
+- Nombre completo- Mindfulness
+
+- Documento de identidad- Neuropausas
+
+- Ãrea, Sede, Tipo de cargo- Apoyo profesional (solicitud de cita con psicÃ³logo)
+
 - Correo corporativo
+
+```---
+
+
+
+### Paso 3ï¸âƒ£: Realizar EvaluaciÃ³n## ğŸ” Panel de AdministraciÃ³n (Backend)
+
 ```
 
-### **Paso 3: Realizar Evaluaci¨®n**
-```
-Selecciona m¨®dulo ¡ú Responde cuestionario ¡ú Sistema calcula resultado autom¨¢ticamente
-```
-- Las preguntas est¨¢n estandarizadas (instrumentos validados cient¨ªficamente)
-- Sistema asigna puntuaci¨®n autom¨¢tica seg¨²n algoritmos establecidos
+Selecciona mÃ³dulo â†’ Responde cuestionario â†’ CÃ¡lculo automÃ¡tico### **1. GestiÃ³n de Usuarios**
 
-### **Paso 4: Ver Resultados**
-```
-Resultado semaforizado:
-?? Verde: Bienestar adecuado
-?? Amarillo: Atenci¨®n preventiva
-?? Rojo: Requiere intervenci¨®n
-```
+```- Crear/editar/eliminar usuarios
 
-### **Paso 5: Recomendaciones Personalizadas**
-Seg¨²n el resultado, el sistema entrega:
+- Preguntas estandarizadas- Asignar a empresa, Ã¡rea, sede
+
+- PuntuaciÃ³n automÃ¡tica- Ver estado: activo/inactivo
+
+- Gestionar roles (trabajador, lÃ­der, admin)
+
+### Paso 4ï¸âƒ£: Ver Resultados
+
+```### **2. Monitoreo de Resultados**
+
+ğŸŸ¢ Verde: Bienestar adecuado
+
+ğŸŸ¡ Amarillo: AtenciÃ³n preventiva**Tablero Visual con:**
+
+ğŸ”´ Rojo: Requiere intervenciÃ³n- Indicadores globales por mÃ³dulo
+
+```- Filtros: fecha, Ã¡rea, sede, nivel de riesgo
+
+- GrÃ¡ficos de tendencias (ej: Â¿aumentÃ³ la ansiedad este mes?)
+
+### Paso 5ï¸âƒ£: Recomendaciones- Comparativos entre Ã¡reas
+
 - Recursos de mindfulness
-- Pausas activas
-- Ejercicios de respiraci¨®n
-- Recomendaci¨®n de consulta psicol¨®gica (si aplica)
 
-### **Paso 6: Centro de Recursos de Bienestar**
-Acceso permanente a:
-- Calibraci¨®n emocional
-- Mindfulness
-- Neuropausas
-- Apoyo profesional (solicitud de cita con psic¨®logo)
+- Pausas activas**Ejemplo de vista:**
 
----
+- Ejercicios de respiraciÃ³n```
 
-## ?? Panel de Administraci¨®n (Backend)
+- Consulta psicolÃ³gica (si aplica)Ãrea: ProducciÃ³n (50 trabajadores)
 
-### **1. Gesti¨®n de Usuarios**
-- Crear/editar/eliminar usuarios
-- Asignar a empresa, ¨¢rea, sede
-- Ver estado: activo/inactivo
-- Gestionar roles (trabajador, l¨ªder, admin)
-
-### **2. Monitoreo de Resultados**
-
-**Tablero Visual con:**
-- Indicadores globales por m¨®dulo
-- Filtros: fecha, ¨¢rea, sede, nivel de riesgo
-- Gr¨¢ficos de tendencias (ej: ?aument¨® la ansiedad este mes?)
-- Comparativos entre ¨¢reas
-
-**Ejemplo de vista:**
-```
-¨¢rea: Producci¨®n (50 trabajadores)
 -------------------------------------
-Salud Mental:
-  ?? 35 (70%)
-  ?? 10 (20%)
-  ?? 5 (10%)  ?? ALERTA
-```
 
-### **3. Alertas Cr¨ªticas**
-Cuando un trabajador sale en **rojo**:
-- Se genera alerta autom¨¢tica
-- Notificaci¨®n al psic¨®logo/HSE asignado
-- Registro del seguimiento (?se contact¨®? ?qu¨¦ acci¨®n se tom¨®?)
+### Paso 6ï¸âƒ£: Centro de RecursosSalud Mental:
 
-**Importante**: El sistema NO muestra el nombre completo, usa ID o iniciales para proteger confidencialidad.
+Acceso permanente a:  ğŸŸ¢ 35 (70%)
 
-### **4. Gesti¨®n de Consentimientos**
+- CalibraciÃ³n emocional  ğŸŸ¡ 10 (20%)
+
+- Mindfulness  ğŸ”´ 5 (10%)  âš ï¸ ALERTA
+
+- Neuropausas```
+
+- Apoyo profesional
+
+### **3. Alertas CrÃ­ticas**
+
+---Cuando un trabajador sale en **rojo**:
+
+- Se genera alerta automÃ¡tica
+
+## ğŸ” Panel de AdministraciÃ³n- NotificaciÃ³n al psicÃ³logo/HSE asignado
+
+- Registro del seguimiento (?se contactï¿½ï¿½? ?quï¿½ï¿½ acciï¿½ï¿½n se tomï¿½ï¿½?)
+
+### 1. GestiÃ³n de Usuarios
+
+- CRUD completo de usuarios**Importante**: El sistema NO muestra el nombre completo, usa ID o iniciales para proteger confidencialidad.
+
+- AsignaciÃ³n por empresa/Ã¡rea/sede
+
+- GestiÃ³n de roles y permisos### **4. Gestiï¿½ï¿½n de Consentimientos**
+
 - Repositorio de todos los consentimientos firmados
-- Descarga de PDF por usuario
-- Trazabilidad: qui¨¦n acept¨®, cu¨¢ndo, desde d¨®nde
 
-### **5. Reportes Autom¨¢ticos**
-Generaci¨®n de informes con indicadores SVE Psicosocial:
-- N¡ã casos activos
-- N¡ã casos cerrados
+### 2. Monitoreo de Resultados- Descarga de PDF por usuario
+
+- Trazabilidad: quiï¿½ï¿½n aceptï¿½ï¿½, cuï¿½ï¿½ndo, desde dï¿½ï¿½nde
+
+**Dashboard con:**
+
+- Indicadores globales por mÃ³dulo### **5. Reportes Automï¿½ï¿½ticos**
+
+- Filtros: fecha, Ã¡rea, sede, riesgoGeneraciï¿½ï¿½n de informes con indicadores SVE Psicosocial:
+
+- GrÃ¡ficos de tendencias- Nï¿½ï¿½ casos activos
+
+- Comparativos entre Ã¡reas- Nï¿½ï¿½ casos cerrados
+
 - % de prevalencia/incidencia
-- % de participaci¨®n
-- Exportaci¨®n: Excel, PDF
-- Integraci¨®n con Power BI/Tableau
 
----
+**Ejemplo:**- % de participaciï¿½ï¿½n
 
-## ??? Arquitectura T¨¦cnica
+```- Exportaciï¿½ï¿½n: Excel, PDF
 
-### **Frontend: Angular 21 (Standalone)**
-- Una sola aplicaci¨®n web responsive
-- Dise?o modular (4 m¨®dulos de evaluaci¨®n)
-- UX amigable con mensajes de acompa?amiento emocional
-- Semaforizaci¨®n visual clara
-- Gr¨¢ficos interactivos para dashboards
+Ãrea: ProducciÃ³n (50 trabajadores)- Integraciï¿½ï¿½n con Power BI/Tableau
 
-**Caracter¨ªsticas:**
+-------------------------------------
+
+Salud Mental:---
+
+  ğŸŸ¢ 35 (70%)
+
+  ğŸŸ¡ 10 (20%)## ??? Arquitectura Tï¿½ï¿½cnica
+
+  ğŸ”´ 5 (10%)  âš ï¸ ALERTA
+
+```### **Frontend: Angular 21 (Standalone)**
+
+- Una sola aplicaciï¿½ï¿½n web responsive
+
+### 3. Alertas CrÃ­ticas- Dise?o modular (4 mï¿½ï¿½dulos de evaluaciï¿½ï¿½n)
+
+Cuando un trabajador sale en rojo:- UX amigable con mensajes de acompa?amiento emocional
+
+- âœ… Alerta automÃ¡tica- Semaforizaciï¿½ï¿½n visual clara
+
+- âœ… NotificaciÃ³n a psicÃ³logo/HSE- Grï¿½ï¿½ficos interactivos para dashboards
+
+- âœ… Registro de seguimiento
+
+- âœ… ProtecciÃ³n de confidencialidad (ID/iniciales)**Caracterï¿½ï¿½sticas:**
+
 - Componentes standalone (sin NgModules)
-- Routing modular
-- Estado global con Signals
-- Guards para protecci¨®n de rutas
-- Interceptors para autenticaci¨®n
 
-### **Backend: C# / .NET 8 (Arquitectura Hexagonal)**
+### 4. GestiÃ³n de Consentimientos- Routing modular
 
-**?Por qu¨¦ hexagonal?**  
-Separaci¨®n clara de responsabilidades en capas:
+- Repositorio digital- Estado global con Signals
 
-```
-?? Domain (Dominio)
+- Descarga de PDFs- Guards para protecciï¿½ï¿½n de rutas
+
+- Trazabilidad completa- Interceptors para autenticaciï¿½ï¿½n
+
+
+
+### 5. Reportes AutomÃ¡ticos### **Backend: C# / .NET 8 (Arquitectura Hexagonal)**
+
+Indicadores SVE Psicosocial:
+
+- NÂ° casos activos/cerrados**?Por quï¿½ï¿½ hexagonal?**
+
+- % prevalencia/incidenciaSeparaciï¿½ï¿½n clara de responsabilidades en capas:
+
+- % participaciÃ³n
+
+- ExportaciÃ³n: Excel, PDF```
+
+- IntegraciÃ³n Power BI/Tableau?? Domain (Dominio)
+
    - Entidades: Usuario, Evaluacion, Resultado
-   - Interfaces: IUsuarioRepository, IEvaluacionService
-   - L¨®gica de negocio pura
-   
-?? Application (Aplicaci¨®n)
-   - Casos de uso: CrearEvaluacion, CalcularResultado, GenerarReporte
-   - DTOs: UsuarioDto, ResultadoDto
-   - Servicios de aplicaci¨®n
-   
-?? Infrastructure (Infraestructura)
-   - Repositorios: UsuarioRepository (SQL Server)
-   - Servicios externos: EmailService, PowerBIService
-   - Autenticaci¨®n: JwtTokenService
-   - Configuraciones
-```
 
-**Seguridad:**
-- JWT + Refresh Tokens
+---   - Interfaces: IUsuarioRepository, IEvaluacionService
+
+   - Lï¿½ï¿½gica de negocio pura
+
+## ğŸ—ï¸ Arquitectura TÃ©cnica
+
+?? Application (Aplicaciï¿½ï¿½n)
+
+### Frontend: Angular 21 (Standalone)   - Casos de uso: CrearEvaluacion, CalcularResultado, GenerarReporte
+
+- AplicaciÃ³n web responsive   - DTOs: UsuarioDto, ResultadoDto
+
+- DiseÃ±o modular (4 mÃ³dulos)   - Servicios de aplicaciï¿½ï¿½n
+
+- UX amigable con mensajes empÃ¡ticos
+
+- SemaforizaciÃ³n visual?? Infrastructure (Infraestructura)
+
+- GrÃ¡ficos interactivos   - Repositorios: UsuarioRepository (SQL Server)
+
+   - Servicios externos: EmailService, PowerBIService
+
+**CaracterÃ­sticas:**   - Autenticaciï¿½ï¿½n: JwtTokenService
+
+- Componentes standalone   - Configuraciones
+
+- Routing modular```
+
+- Estado global con Signals
+
+- Guards de protecciÃ³n**Seguridad:**
+
+- Interceptors para auth- JWT + Refresh Tokens
+
 - Roles y permisos (Claims-based)
-- Encriptaci¨®n de datos sensibles
+
+### Backend: C# / .NET 8 (Hexagonal)- Encriptaciï¿½ï¿½n de datos sensibles
+
 - HTTPS obligatorio
-- Rate limiting
+
+**Arquitectura en capas:**- Rate limiting
+
 - CORS configurado
 
-### **Base de Datos: SQL Server**
-
-**Modelo de Datos - Tablas Principales:**
-# ??? EmoCheck Database - SQL Server
-
-## ?? Descripci¨®n General
-
-Base de datos SQL Server para el proyecto **EmoCheck**, dise?ada con arquitectura normalizada, esquemas organizados y siguiendo las mejores pr¨¢cticas de seguridad y auditor¨ªa.
-
----
-
-## ??? Arquitectura de Esquemas
-
-La base de datos est¨¢ organizada en **6 esquemas principales**:
-
-### 1. **dbo** (Default Schema)
-Tablas maestras del sistema:
-- `State` - Estados generales del sistema
-- `Country` - Pa¨ªses
-- `City` - Ciudades
-
-### 2. **configuration** (Configuraci¨®n)
-Configuraci¨®n organizacional:
-- `Company` - Empresas/Organizaciones
-- `Site` - Sedes
-- `Area` - ¨¢reas/Departamentos
-- `JobType` - Tipos de cargo
-- `Application` - Aplicaciones del sistema
-
-### 3. **security** (Seguridad)
-Usuarios y autenticaci¨®n:
-- `User` - Usuarios del sistema
-- `Role` - Roles
-- `UserRole` - Relaci¨®n usuarios-roles
-- `RefreshToken` - Tokens JWT
-- `PasswordResetToken` - Tokens de recuperaci¨®n
-- `InformedConsent` - Consentimientos informados
-
-### 4. **assessment** (Evaluaciones)
-M¨®dulos de evaluaci¨®n:
-- `AssessmentModule` - M¨®dulos de evaluaci¨®n
-- `Question` - Preguntas
-- `QuestionOption` - Opciones de respuesta
-- `Evaluation` - Evaluaciones realizadas
-- `EvaluationResponse` - Respuestas
-
-### 5. **results** (Resultados)
-Resultados y alertas:
-- `EvaluationResult` - Resultados de evaluaciones
-- `DimensionScore` - Puntajes por dimensi¨®n
-- `Recommendation` - Recomendaciones personalizadas
-- `RecommendationType` - Tipos de recomendaci¨®n
-- `Alert` - Alertas cr¨ªticas
-- `CaseTracking` - Seguimiento de casos
-
-### 6. **resources** (Recursos)
-Recursos de bienestar:
-- `ResourceCategory` - Categor¨ªas de recursos
-- `WellnessResource` - Recursos de bienestar
-- `UserResourceAccess` - Acceso a recursos
-- `ProfessionalSupport` - Apoyo profesional
-- `SupportRequest` - Solicitudes de apoyo
-
-### 7. **audit** (Auditor¨ªa)
-Trazabilidad y logs:
-- `AuditLog` - Registro de auditor¨ªa
-- `SystemLog` - Logs del sistema
-- `EmailLog` - Emails enviados
-- `DataExport` - Exportaciones de datos
-
----
-
-## ?? Total de Tablas: 35+
-
----
-
-**Seguridad en DB:**
-- Cifrado AES-256 para campos sensibles (PasswordHash, Documento)
-- Anonimizaci¨®n en reportes (solo ID)
-- Backups autom¨¢ticos diarios
-- Logs de auditor¨ªa (qui¨¦n accedi¨® a qu¨¦ y cu¨¢ndo)
-- ¨ªndices optimizados para consultas frecuentes
-- Procedimientos almacenados para reportes complejos
-
----
-
-## ?? Seguridad y Cumplimiento Legal
-
-### **Ley 1581 de 2012 (Protecci¨®n de Datos Personales - Colombia)**
-? Consentimiento informado expl¨ªcito  
-? Finalidad clara del tratamiento de datos  
-? Derecho de acceso, rectificaci¨®n y eliminaci¨®n  
-? Cifrado y almacenamiento seguro  
-? Trazabilidad de aceptaciones  
-
-### **Confidencialidad M¨¦dica**
-- Los datos de salud son **ultra sensibles**
-- Solo el usuario ve sus resultados individuales
-- Administradores ven datos **agregados** o **anonimizados**
-- En alertas cr¨ªticas: se usa ID, no nombre completo
-- Separaci¨®n de datos personales y datos de salud
-
-### **Trazabilidad Total**
-Cada acci¨®n se registra:
-```json
-{
-  "id": "12345",
-  "usuario": "user@empresa.com",
-  "accion": "Complet¨® evaluaci¨®n de Salud Mental",
-  "fecha": "2026-01-20T10:30:45Z",
-  "ip": "192.168.1.100",
-  "detalles": {
-    "evaluacionId": "EVA-001",
-    "modulo": "Salud Mental",
-    "resultado": "Amarillo"
-  }
-}
 ```
 
-### **Medidas de Seguridad Implementadas**
+ğŸ“ Domain (Dominio)### **Base de Datos: SQL Server**
+
+   - Entidades: Usuario, Evaluacion, Resultado
+
+   - Interfaces: IUsuarioRepository, IEvaluacionService**Modelo de Datos - Tablas Principales:**
+
+   - LÃ³gica de negocio pura# ??? EmoCheck Database - SQL Server
+
+
+
+ğŸ“ Application (AplicaciÃ³n)## ?? Descripciï¿½ï¿½n General
+
+   - Casos de uso: CrearEvaluacion, CalcularResultado
+
+   - DTOs: UsuarioDto, ResultadoDtoBase de datos SQL Server para el proyecto **EmoCheck**, dise?ada con arquitectura normalizada, esquemas organizados y siguiendo las mejores prï¿½ï¿½cticas de seguridad y auditorï¿½ï¿½a.
+
+   - Servicios de aplicaciÃ³n
+
+   ---
+
+ğŸ“ Infrastructure (Infraestructura)
+
+   - Repositorios: UsuarioRepository## ??? Arquitectura de Esquemas
+
+   - Servicios externos: EmailService, PowerBIService
+
+   - AutenticaciÃ³n: JwtTokenServiceLa base de datos estï¿½ï¿½ organizada en **6 esquemas principales**:
+
+```
+
+### 1. **dbo** (Default Schema)
+
+**APIs REST:**Tablas maestras del sistema:
+
+```http- `State` - Estados generales del sistema
+
+POST   /api/auth/login- `Country` - Paï¿½ï¿½ses
+
+POST   /api/auth/refresh-token- `City` - Ciudades
+
+POST   /api/usuarios/registro
+
+GET    /api/evaluaciones/{usuarioId}### 2. **configuration** (Configuraciï¿½ï¿½n)
+
+POST   /api/evaluaciones/salud-mentalConfiguraciï¿½ï¿½n organizacional:
+
+GET    /api/resultados/{evaluacionId}- `Company` - Empresas/Organizaciones
+
+GET    /api/dashboard/indicadores- `Site` - Sedes
+
+POST   /api/dashboard/reportes/exportar- `Area` - ï¿½ï¿½reas/Departamentos
+
+```- `JobType` - Tipos de cargo
+
+- `Application` - Aplicaciones del sistema
+
+**Seguridad:**
+
+- âœ… JWT + Refresh Tokens### 3. **security** (Seguridad)
+
+- âœ… Roles y permisos (Claims)Usuarios y autenticaciï¿½ï¿½n:
+
+- âœ… Cifrado de datos sensibles- `User` - Usuarios del sistema
+
+- âœ… HTTPS obligatorio- `Role` - Roles
+
+- âœ… Rate limiting- `UserRole` - Relaciï¿½ï¿½n usuarios-roles
+
+- âœ… CORS configurado- `RefreshToken` - Tokens JWT
+
+- `PasswordResetToken` - Tokens de recuperaciï¿½ï¿½n
+
+---- `InformedConsent` - Consentimientos informados
+
+
+
+## ğŸ—„ï¸ Base de Datos### 4. **assessment** (Evaluaciones)
+
+Mï¿½ï¿½dulos de evaluaciï¿½ï¿½n:
+
+### SQL Server 2022- `AssessmentModule` - Mï¿½ï¿½dulos de evaluaciï¿½ï¿½n
+
+- `Question` - Preguntas
+
+**Esquemas organizados:**- `QuestionOption` - Opciones de respuesta
+
+- `Evaluation` - Evaluaciones realizadas
+
+1. **dbo**: Tablas maestras (State, Country, City)- `EvaluationResponse` - Respuestas
+
+2. **configuration**: Empresas, Sedes, Ãreas, Tipos de cargo
+
+3. **security**: Usuarios, Roles, Tokens, Consentimientos### 5. **results** (Resultados)
+
+4. **assessment**: MÃ³dulos, Preguntas, EvaluacionesResultados y alertas:
+
+5. **results**: Resultados, Recomendaciones, Alertas- `EvaluationResult` - Resultados de evaluaciones
+
+6. **resources**: Recursos de bienestar, Apoyo profesional- `DimensionScore` - Puntajes por dimensiï¿½ï¿½n
+
+7. **audit**: Logs de auditorÃ­a, Sistema, Emails- `Recommendation` - Recomendaciones personalizadas
+
+- `RecommendationType` - Tipos de recomendaciï¿½ï¿½n
+
+**Total: 35+ tablas**- `Alert` - Alertas crï¿½ï¿½ticas
+
+- `CaseTracking` - Seguimiento de casos
+
+### CaracterÃ­sticas:
+
+- âœ… NormalizaciÃ³n (3FN)### 6. **resources** (Recursos)
+
+- âœ… Foreign Keys para integridadRecursos de bienestar:
+
+- âœ… Ãndices optimizados- `ResourceCategory` - Categorï¿½ï¿½as de recursos
+
+- âœ… Campos CreatedAt/UpdatedAt- `WellnessResource` - Recursos de bienestar
+
+- âœ… Soft delete (IsActive)- `UserResourceAccess` - Acceso a recursos
+
+- âœ… Multi-tenant- `ProfessionalSupport` - Apoyo profesional
+
+- `SupportRequest` - Solicitudes de apoyo
+
+ğŸ“„ **Ver documentaciÃ³n completa**: [Database/README.md](Database/README.md)
+
+ğŸ“Š **Ver diagrama ER**: [Database/ER_DIAGRAM.md](Database/ER_DIAGRAM.md)### 7. **audit** (Auditorï¿½ï¿½a)
+
+Trazabilidad y logs:
+
+---- `AuditLog` - Registro de auditorï¿½ï¿½a
+
+- `SystemLog` - Logs del sistema
+
+## ğŸ”’ Seguridad y Cumplimiento- `EmailLog` - Emails enviados
+
+- `DataExport` - Exportaciones de datos
+
+### Ley 1581 de 2012 (Colombia)
+
+âœ… Consentimiento informado explÃ­cito  ---
+
+âœ… Finalidad clara del tratamiento
+
+âœ… Derecho de acceso/rectificaciÃ³n/eliminaciÃ³n  ## ?? Total de Tablas: 35+
+
+âœ… Cifrado y almacenamiento seguro
+
+âœ… Trazabilidad de aceptaciones  ---
+
+
+
+### Confidencialidad MÃ©dica**Seguridad en DB:**
+
+- Datos ultra sensibles- Cifrado AES-256 para campos sensibles (PasswordHash, Documento)
+
+- Solo el usuario ve sus resultados- Anonimizaciï¿½ï¿½n en reportes (solo ID)
+
+- Administradores: datos agregados/anonimizados- Backups automï¿½ï¿½ticos diarios
+
+- Cifrado AES-256- Logs de auditorï¿½ï¿½a (quiï¿½ï¿½n accediï¿½ï¿½ a quï¿½ï¿½ y cuï¿½ï¿½ndo)
+
+- Logs de auditorÃ­a completos- ï¿½ï¿½ndices optimizados para consultas frecuentes
+
+- Procedimientos almacenados para reportes complejos
+
+### Trazabilidad
+
+Registro de cada acciÃ³n:---
+
+```json
+
+{## ?? Seguridad y Cumplimiento Legal
+
+  "userId": 12345,
+
+  "action": "Completed Mental Health Assessment",### **Ley 1581 de 2012 (Protecciï¿½ï¿½n de Datos Personales - Colombia)**
+
+  "timestamp": "2026-01-20T10:30:45Z",? Consentimiento informado explï¿½ï¿½cito
+
+  "ip": "192.168.1.100",? Finalidad clara del tratamiento de datos
+
+  "result": "Yellow"? Derecho de acceso, rectificaciï¿½ï¿½n y eliminaciï¿½ï¿½n
+
+}? Cifrado y almacenamiento seguro
+
+```? Trazabilidad de aceptaciones
+
+
+
+---### **Confidencialidad Mï¿½ï¿½dica**
+
+- Los datos de salud son **ultra sensibles**
+
+## ğŸ”— Integraciones- Solo el usuario ve sus resultados individuales
+
+- Administradores ven datos **agregados** o **anonimizados**
+
+### 1. Power BI / Tableau- En alertas crï¿½ï¿½ticas: se usa ID, no nombre completo
+
+- Dashboards avanzados- Separaciï¿½ï¿½n de datos personales y datos de salud
+
+- ConexiÃ³n directa a SQL Server
+
+- ActualizaciÃ³n en tiempo real### **Trazabilidad Total**
+
+Cada acciï¿½ï¿½n se registra:
+
+### 2. APIs de ARL```json
+
+- EnvÃ­o automÃ¡tico de reportes{
+
+- Cumplimiento SST  "id": "12345",
+
+- Formato XML/JSON  "usuario": "user@empresa.com",
+
+  "accion": "Completï¿½ï¿½ evaluaciï¿½ï¿½n de Salud Mental",
+
+### 3. HR Tech / HRIS  "fecha": "2026-01-20T10:30:45Z",
+
+- ImportaciÃ³n masiva de usuarios  "ip": "192.168.1.100",
+
+- SincronizaciÃ³n organizacional  "detalles": {
+
+    "evaluacionId": "EVA-001",
+
+### 4. Notificaciones    "modulo": "Salud Mental",
+
+- Email (SMTP)    "resultado": "Amarillo"
+
+- SMS (Twilio)  }
+
+- Push notifications}
+
+```
+
+### 5. ExportaciÃ³n
+
+- PDF, Excel, CSV, XML### **Medidas de Seguridad Implementadas**
+
 - ? HTTPS obligatorio (TLS 1.3)
-- ? Autenticaci¨®n multifactor (opcional)
-- ? Tokens con expiraci¨®n corta
-- ? Refresh tokens almacenados de forma segura
-- ? Validaci¨®n de inputs (prevenci¨®n XSS, SQL Injection)
-- ? Rate limiting (prevenci¨®n DDoS)
-- ? Logs de accesos sospechosos
-- ? Aislamiento de datos por empresa
 
----
+---- ? Autenticaciï¿½ï¿½n multifactor (opcional)
 
-## ?? Integraciones
+- ? Tokens con expiraciï¿½ï¿½n corta
 
-### **1. Power BI / Tableau**
+## ğŸ“¦ Stack TecnolÃ³gico- ? Refresh tokens almacenados de forma segura
+
+- ? Validaciï¿½ï¿½n de inputs (prevenciï¿½ï¿½n XSS, SQL Injection)
+
+### Backend- ? Rate limiting (prevenciï¿½ï¿½n DDoS)
+
+- .NET 8 (C#)- ? Logs de accesos sospechosos
+
+- Entity Framework Core 8- ? Aislamiento de datos por empresa
+
+- ASP.NET Core Web API
+
+- FluentValidation---
+
+- AutoMapper
+
+- MediatR (CQRS)## ?? Integraciones
+
+- Serilog
+
+- xUnit### **1. Power BI / Tableau**
+
 - Dashboard avanzado con visualizaciones
-- Conexi¨®n directa a vistas de SQL Server
-- Actualizaci¨®n en tiempo real
-- Filtros interactivos por empresa/¨¢rea/sede
 
-### **2. APIs de ARL (Administradoras de Riesgos Laborales)**
-- Env¨ªo autom¨¢tico de reportes agregados
+### Frontend- Conexiï¿½ï¿½n directa a vistas de SQL Server
+
+- Angular 21- Actualizaciï¿½ï¿½n en tiempo real
+
+- TypeScript 5.x- Filtros interactivos por empresa/ï¿½ï¿½rea/sede
+
+- RxJS
+
+- Chart.js### **2. APIs de ARL (Administradoras de Riesgos Laborales)**
+
+- TailwindCSS / Angular Material- Envï¿½ï¿½o automï¿½ï¿½tico de reportes agregados
+
 - Cumplimiento de normativas SST
-- Formato XML o JSON seg¨²n requerimientos
 
-### **3. HR Tech / HRIS (Human Resources Information System)**
-- Importaci¨®n masiva de usuarios
-- Sincronizaci¨®n de cambios organizacionales
-- Actualizaci¨®n autom¨¢tica de ¨¢reas/sedes
+### Base de Datos- Formato XML o JSON segï¿½ï¿½n requerimientos
 
-### **4. Sistema de Notificaciones**
-- Email (SMTP configurado)
+- SQL Server 2022
+
+- Redis (cachÃ©)### **3. HR Tech / HRIS (Human Resources Information System)**
+
+- Importaciï¿½ï¿½n masiva de usuarios
+
+### DevOps- Sincronizaciï¿½ï¿½n de cambios organizacionales
+
+- Git / GitHub- Actualizaciï¿½ï¿½n automï¿½ï¿½tica de ï¿½ï¿½reas/sedes
+
+- Docker / Docker Compose
+
+- CI/CD (GitHub Actions)### **4. Sistema de Notificaciones**
+
+- Swagger / OpenAPI- Email (SMTP configurado)
+
 - SMS (Twilio/similar)
-- Push notifications (para versi¨®n PWA futura)
 
-### **5. Exportaci¨®n de Datos**
+---- Push notifications (para versiï¿½ï¿½n PWA futura)
+
+
+
+## ğŸš€ InstalaciÃ³n### **5. Exportaciï¿½ï¿½n de Datos**
+
 - PDF (reportes individuales y agregados)
-- Excel (tablas din¨¢micas)
-- CSV (para an¨¢lisis externos)
-- XML (para auditor¨ªas y ARL)
 
----
+### Prerrequisitos- Excel (tablas dinï¿½ï¿½micas)
 
-## ?? Resumen Ejecutivo
+- .NET 8 SDK- CSV (para anï¿½ï¿½lisis externos)
 
-### **?Qu¨¦ hace EmoCheck?**
+- SQL Server 2019+- XML (para auditorï¿½ï¿½as y ARL)
 
-1. ? **Eval¨²a** la salud mental y bienestar de trabajadores con cuestionarios cient¨ªficos
-2. ? **Detecta** casos de riesgo con semaforizaci¨®n autom¨¢tica
-3. ? **Alerta** a los responsables de HSE/psicolog¨ªa cuando hay casos cr¨ªticos
-4. ? **Recomienda** recursos personalizados seg¨²n el resultado
-5. ? **Reporta** indicadores agregados para toma de decisiones
-6. ? **Cumple** con normativas legales de protecci¨®n de datos y salud ocupacional
+- Node.js 20+
+
+- Angular CLI 21---
+
+
+
+### 1. Clonar el repositorio## ?? Resumen Ejecutivo
+
+```bash
+
+git clone https://github.com/CRISTIANROJAS1995/emocheck-api.git### **?Quï¿½ï¿½ hace EmoCheck?**
+
+cd emocheck-api
+
+```1. ? **Evalï¿½ï¿½a** la salud mental y bienestar de trabajadores con cuestionarios cientï¿½ï¿½ficos
+
+2. ? **Detecta** casos de riesgo con semaforizaciï¿½ï¿½n automï¿½ï¿½tica
+
+### 2. Crear base de datos3. ? **Alerta** a los responsables de HSE/psicologï¿½ï¿½a cuando hay casos crï¿½ï¿½ticos
+
+```powershell4. ? **Recomienda** recursos personalizados segï¿½ï¿½n el resultado
+
+# Crear DB5. ? **Reporta** indicadores agregados para toma de decisiones
+
+sqlcmd -S localhost -Q "CREATE DATABASE [EmoCheckDB]"6. ? **Cumple** con normativas legales de protecciï¿½ï¿½n de datos y salud ocupacional
+
 7. ? **Integra** con herramientas externas (BI, ARL, HRIS)
 
-### **Beneficios Clave**
+# Ejecutar scripts
 
-**Para la Empresa:**
-- Cumplimiento legal (Resoluci¨®n 2404/2019)
-- Reducci¨®n de ausentismo
+cd Database### **Beneficios Clave**
+
+sqlcmd -S localhost -d EmoCheckDB -i 01_CREATE_SCHEMAS.sql
+
+sqlcmd -S localhost -d EmoCheckDB -i 02_CREATE_MASTER_TABLES.sql**Para la Empresa:**
+
+# ... ejecutar todos los scripts en orden- Cumplimiento legal (Resoluciï¿½ï¿½n 2404/2019)
+
+```- Reducciï¿½ï¿½n de ausentismo
+
 - Mejora del clima laboral
-- Datos para toma de decisiones
-- ROI medible
 
-**Para el Trabajador:**
-- Autoconocimiento de su salud mental
-- Acceso a recursos de bienestar
+### 3. Configurar Backend- Datos para toma de decisiones
+
+```bash- ROI medible
+
+cd src/EmoCheck.API
+
+dotnet restore**Para el Trabajador:**
+
+dotnet build- Autoconocimiento de su salud mental
+
+```- Acceso a recursos de bienestar
+
 - Confidencialidad garantizada
-- Apoyo profesional cuando lo necesita
-- Prevenci¨®n de condiciones graves
 
-**Para el ¨¢rea de HSE/RRHH:**
-- Visibilidad de tendencias
-- Alertas tempranas
-- Reportes automatizados
-- Seguimiento de casos
-- Evidencia para auditor¨ªas
+**Configurar `appsettings.json`:**- Apoyo profesional cuando lo necesita
+
+```json- Prevenciï¿½ï¿½n de condiciones graves
+
+{
+
+  "ConnectionStrings": {**Para el ï¿½ï¿½rea de HSE/RRHH:**
+
+    "DefaultConnection": "Server=localhost;Database=EmoCheckDB;Trusted_Connection=true;"- Visibilidad de tendencias
+
+  },- Alertas tempranas
+
+  "JwtSettings": {- Reportes automatizados
+
+    "SecretKey": "your-secret-key-here",- Seguimiento de casos
+
+    "Issuer": "EmoCheckAPI",- Evidencia para auditorï¿½ï¿½as
+
+    "Audience": "EmoCheckWeb",
+
+    "ExpirationMinutes": 60---
+
+  }
+
+}## ?? Stack Tecnolï¿½ï¿½gico
+
+```
+
+### **Frontend**
+
+### 4. Ejecutar Backend- Angular 21 (Standalone Components)
+
+```bash- TypeScript 5.x
+
+dotnet run- RxJS para programaciï¿½ï¿½n reactiva
+
+```- Chart.js / ApexCharts para grï¿½ï¿½ficos
+
+- TailwindCSS / Angular Material para UI
+
+API disponible en: `https://localhost:7001`- PWA capabilities (opcional)
+
+
+
+### 5. Configurar Frontend### **Backend**
+
+```bash- .NET 8 (C#)
+
+cd ../EmoCheck.Web- Entity Framework Core 8
+
+npm install- ASP.NET Core Web API
+
+ng serve- FluentValidation
+
+```- AutoMapper
+
+- MediatR (CQRS pattern)
+
+App disponible en: `http://localhost:4200`- Serilog (logging estructurado)
+
+- xUnit (testing)
 
 ---
 
-## ?? Stack Tecnol¨®gico
-
-### **Frontend**
-- Angular 21 (Standalone Components)
-- TypeScript 5.x
-- RxJS para programaci¨®n reactiva
-- Chart.js / ApexCharts para gr¨¢ficos
-- TailwindCSS / Angular Material para UI
-- PWA capabilities (opcional)
-
-### **Backend**
-- .NET 8 (C#)
-- Entity Framework Core 8
-- ASP.NET Core Web API
-- FluentValidation
-- AutoMapper
-- MediatR (CQRS pattern)
-- Serilog (logging estructurado)
-- xUnit (testing)
-
 ### **Base de Datos**
-- SQL Server 2022 / Azure SQL
-- Redis (cach¨¦ de sesiones)
 
-### **DevOps**
-- Git / GitHub
-- Docker / Docker Compose
-- CI/CD (GitHub Actions / Azure DevOps)
-- SonarQube (an¨¢lisis de c¨®digo)
-- Swagger / OpenAPI (documentaci¨®n)
+## ğŸ“š DocumentaciÃ³n- SQL Server 2022 / Azure SQL
 
-### **Infraestructura (asumida por cliente)**
+- Redis (cachï¿½ï¿½ de sesiones)
+
+- ğŸ“„ [DocumentaciÃ³n del Proyecto](DOCUMENTACION_PROYECTO.md)
+
+- ğŸ—„ï¸ [DocumentaciÃ³n de Base de Datos](Database/README.md)### **DevOps**
+
+- ğŸ“Š [Diagrama Entidad-RelaciÃ³n](Database/ER_DIAGRAM.md)- Git / GitHub
+
+- ğŸ”§ [GuÃ­a de API](docs/API_GUIDE.md) *(prÃ³ximamente)*- Docker / Docker Compose
+
+- ğŸ¨ [GuÃ­a de UX/UI](docs/UX_GUIDE.md) *(prÃ³ximamente)*- CI/CD (GitHub Actions / Azure DevOps)
+
+- SonarQube (anï¿½ï¿½lisis de cï¿½ï¿½digo)
+
+---- Swagger / OpenAPI (documentaciï¿½ï¿½n)
+
+
+
+## ğŸ“ Contacto### **Infraestructura (asumida por cliente)**
+
 - Azure App Service / AWS EC2
-- Azure SQL Database / AWS RDS
-- Azure Blob Storage / AWS S3
-- Azure Application Insights / CloudWatch
-- CDN para assets est¨¢ticos
-- SSL/TLS certificates
+
+**Repositorio**: https://github.com/CRISTIANROJAS1995/emocheck-api  - Azure SQL Database / AWS RDS
+
+**Rama principal**: main  - Azure Blob Storage / AWS S3
+
+**Fecha de inicio**: Enero 20, 2026  - Azure Application Insights / CloudWatch
+
+- CDN para assets estï¿½ï¿½ticos
+
+---- SSL/TLS certificates
+
+
+## ğŸ“„ Licencia
+
+Este proyecto es confidencial y propiedad del proyecto EmoCheck.
+Todos los derechos reservados Â© 2026
+
+---
+
+**Ãšltima actualizaciÃ³n**: 2026-01-20
+**VersiÃ³n**: 1.0.0
+**Autor**: Cristian Rojas
